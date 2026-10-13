@@ -1,0 +1,6 @@
+#Librerias
+fastapi
+pydantic
+uvicorn 
+httpx
+pymongo
