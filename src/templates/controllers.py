@@ -51,9 +51,9 @@ def update_trainee(id: str, data: TraineeUpdateModel):
 
 #ELiminar aprendiz
 def delete_trainee(id: str):
-    trainee = collection.find_one({"id": ObjectId(id)})
+    trainee = collection.find_one({"_id": ObjectId(id)})
     if trainee:
-        collection.delete_one({"id": ObjectId(id)})
+        collection.delete_one({"_id": ObjectId(id)})
         return True
     return False
 

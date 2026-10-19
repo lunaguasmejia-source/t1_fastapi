@@ -9,7 +9,7 @@ client = client = MongoClient(MONGO_URL, ServerSelectionTimeoutMS = 3000)
 
 #Crear la base de datos y la coleccion
 db = client.data_ap
-collection = db.traineeç
+collection = db.trainee
 
 try: 
     #Intentar obtener informacion del servidor para verificar la conexion
@@ -18,7 +18,4 @@ try:
     print("Conexion exitosa a MongoDB")
 except(ConnectionFailure, ServerSelectionTimeoutError) as e:
     print("Error al conectar a MongoDB: {e}")
-
-finally:
-    #Cerrar la conexion al cliente de MongoDB
-    client.close()
+    
