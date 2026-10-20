@@ -4,4 +4,4 @@ pydantic
 uvicorn 
 httpx
 pymongo
-email-validation
+email-validator

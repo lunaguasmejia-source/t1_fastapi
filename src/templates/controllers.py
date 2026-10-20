@@ -3,7 +3,7 @@ from src.models.database import collection
 from src.models.models import TraineeModel, TraineeUpdateModel
 
 def helper_trainee(trainee) -> dict:
-    return{
+    return{ 
         
         "_id": str(trainee["_id"]),
         "document": str(trainee["document"]),
