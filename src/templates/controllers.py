@@ -5,7 +5,7 @@ from src.models.models import TraineeModel, TraineeUpdateModel
 def helper_trainee(trainee) -> dict:
     return{ 
         
-        "_id": str(trainee["_id"]),
+        "id": str(trainee["_id"]),
         "document": str(trainee["document"]),
         "firstname": trainee["firstname"],
         "lastname": trainee["lastname"],
@@ -19,7 +19,7 @@ def helper_trainee(trainee) -> dict:
 def create_trainee(trainee: TraineeModel):
     trainee_dict = trainee.model_dump() #es un metodo que me permite  a mi sanitizar
     result = collection.insert_one(trainee_dict)
-    new_trainee = collection.find_one({"id": result.inserted_id})
+    new_trainee = collection.find_one({"_id": result.inserted_id})
     return helper_trainee(new_trainee)
 
 
@@ -33,7 +33,7 @@ def get_all_trainees():
 
 #Obtener datos del parendiz por ID
 def get_trainee_by_id(id: str):
-    trainee = collection.find_one({"id": ObjectId(id)})
+    trainee = collection.find_one({"_id": ObjectId(id)})
     if trainee:
         return helper_trainee(trainee)
     return None
